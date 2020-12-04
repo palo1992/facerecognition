@@ -94,6 +94,7 @@ class App extends Component {
         this.setState({
             imageUrl: this.state.input
         });
+
         app.models.predict(
             Clarifai.FACE_DETECT_MODEL, 
             this.state.input)
@@ -112,7 +113,7 @@ class App extends Component {
                     })
                 }
                 this.displayFaceBox(this.calculateFaceLocation(response))})
-            .catch(err => console.log(this.err));
+            .catch(err => console.log(err));
     }
     
     render(){
